@@ -1,0 +1,14 @@
+<!-- 继承模板页 -->
+{% extends 'xmjc/base.html' %}
+<!-- 设置标题 -->
+
+<!-- 菜单导航 -->
+{% block lnav %}
+<a href="{% url 'xmjf'%}">{{ lnav }}</a>
+{% endblock %}
+
+<!-- 覆盖内容块，自定义页面的内容 -->
+{% block content %}
+<p>覆盖内容块，这里是项目经费</p>
+
+{% endblock %}

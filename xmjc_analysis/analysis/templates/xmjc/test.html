@@ -1,0 +1,757 @@
+<!-- <html>
+<head>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="/static/css/test.css">
+<link rel="stylesheet" type="text/css" href="/static/bootstrap-dist/css/bootstrap.css">
+    <title>test</title>
+</head>
+<body>
+<p>hello<p>
+
+<div class="alert alert-info">ceshi    </div>
+
+<img src="/static/img/avatars/avatar1.jpg" alt="mage"/>
+<div id='hello'>Hello</div>
+</body>
+</html> -->
+
+<html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>四川省科技厅大数据决策分析平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- CSS样式设计 -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/cloud-admin.css" >
+    <link rel="stylesheet" type="text/css"  href="../../static/css/themes/default.css" id="skin-switcher" >
+    <link rel="stylesheet" type="text/css"  href="../../static/css/responsive.css" >
+    <!-- STYLESHEETS --><!--[if lt IE 9]><script src="../../static/js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <link href="../../static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- ANIMATE -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/animatecss/animate.min.css" />
+    <!-- DATE RANGE PICKER -->
+    <link rel="stylesheet" type="text/css" href="../../static/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+    <!-- TODO -->
+    <link rel="stylesheet" type="text/css" href="../../static/js/jquery-todo/css/styles.css" />
+    <!-- FULL CALENDAR -->
+    <link rel="stylesheet" type="text/css" href="../../static/js/fullcalendar/fullcalendar.min.css" />
+    <!-- GRITTER -->
+    <link rel="stylesheet" type="text/css" href="../../static/js/gritter/css/jquery.gritter.css" />
+    <!-- FONTS -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+
+
+
+
+<body>
+    <!-- HEADER -->
+    <header class="navbar clearfix" id="header">
+        <div class="container">
+                <div class="navbar-brand">
+                    <!-- COMPANY LOGO -->
+                    <a href="index.html">
+                        <img src="../../static/img/logo/logo.png" alt="大数据决策分析" class="img-responsive" height="30" width="120">
+                    </a>
+                    <!-- /COMPANY LOGO -->
+                    <!-- TEAM STATUS FOR MOBILE -->
+                    <div class="visible-xs">
+                        <a href="#" class="team-status-toggle switcher btn dropdown-toggle">
+                            <i class="fa fa-users"></i>
+                        </a>
+                    </div>
+                    <!-- /TEAM STATUS FOR MOBILE -->
+                    <!-- SIDEBAR COLLAPSE -->
+                    <div id="sidebar-collapse" class="sidebar-collapse btn">
+                        <i class="fa fa-bars"
+                            data-icon1="fa fa-bars"
+                            data-icon2="fa fa-bars" ></i>
+                    </div>
+                    <!-- /SIDEBAR COLLAPSE -->
+                </div>
+                <!-- NAVBAR LEFT -->
+                <ul class="nav navbar-nav pull-left hidden-xs" id="navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-cog"></i>
+                            <span class="name">皮肤</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu skins">
+                            <li class="dropdown-title">
+                                <span><i class="fa fa-leaf"></i> 皮肤主题 </span>
+                            </li>
+                            <li><a href="#" data-skin="默认">天蓝 (默认)</a></li>
+                            <li><a href="#" data-skin="night">深蓝</a></li>
+                            <li><a href="#" data-skin="earth">棕色</a></li>
+                            <li><a href="#" data-skin="utopia">乌托邦</a></li>
+                            <li><a href="#" data-skin="nature">自然绿</a></li>
+                            <li><a href="#" data-skin="graphite">石墨黑</a></li>
+                         </ul>
+                    </li>
+                </ul>
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <ul class="nav navbar-nav pull-right">
+                    <!-- BEGIN NOTIFICATION DROPDOWN -->
+                    <li class="dropdown" id="header-notification">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge">7</span>
+                        </a>
+                        <ul class="dropdown-menu notification">
+                            <li class="dropdown-title">
+                                <span><i class="fa fa-bell"></i> 5 消息通知</span>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-success"><i class="fa fa-user"></i></span>
+                                    <span class="body">
+                                        <span class="message">5 用户在线. </span>
+                                        <span class="time">
+                                            <i class="fa fa-clock-o"></i>
+                                            <span>刚刚</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-warning"><i class="fa fa-lock"></i></span>
+                                    <span class="body">
+                                        <span class="message">DW1 服务器停止.</span>
+                                        <span class="time">
+                                            <i class="fa fa-clock-o"></i>
+                                            <span>32 分钟前</span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="footer">
+                                <a href="#">查看所有通知信息 <i class="fa fa-arrow-circle-right"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- END TODO DROPDOWN -->
+                    <!-- BEGIN USER LOGIN DROPDOWN -->
+                    <li class="dropdown user" id="header-user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img alt="" src="../../static/img/avatars/avatar3.jpg" />
+                            <span class="username">王定国</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-user"></i>个人简介</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> 账号设置</a></li>
+                            <li><a href="login.html"><i class="fa fa-power-off"></i>退 出</a></li>
+                        </ul>
+                    </li>
+                    <!-- END USER LOGIN DROPDOWN -->
+                </ul>
+                <!-- END TOP NAVIGATION MENU -->
+        </div>
+        <!-- TEAM STATUS -->
+    <!--    <div class="container team-status" id="team-status">
+          <div id="scrollbar">
+            <div class="handle">
+            </div>
+          </div>
+          <div id="teamslider">
+              <ul class="team-list">
+                <li class="current">
+                  <a href="javascript:void(0);">
+                  <span class="image">
+                      <img src="../../static/img/avatars/avatar3.jpg" alt="" />
+                  </span>
+                  <span class="title">
+                    You
+                  </span>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 35%">
+                        <span class="sr-only">35% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 20%">
+                        <span class="sr-only">20% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-danger" style="width: 10%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+                    </div>
+                    <span class="status">
+                        <div class="field">
+                            <span class="badge badge-green">6</span> completed
+                            <span class="pull-right fa fa-check"></span>
+                        </div>
+                        <div class="field">
+                            <span class="badge badge-orange">3</span> in-progress
+                            <span class="pull-right fa fa-adjust"></span>
+                        </div>
+                        <div class="field">
+                            <span class="badge badge-red">1</span> pending
+                            <span class="pull-right fa fa-list-ul"></span>
+                        </div>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">
+                  <span class="image">
+                      <img src="../../static/img/avatars/avatar1.jpg" alt="" />
+                  </span>
+                  <span class="title">
+                    Max Doe
+                  </span>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 15%">
+                        <span class="sr-only">35% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 40%">
+                        <span class="sr-only">20% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-danger" style="width: 20%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+                    </div>
+                    <span class="status">
+                        <div class="field">
+                            <span class="badge badge-green">2</span> completed
+                            <span class="pull-right fa fa-check"></span>
+                        </div>
+                        <div class="field">
+                            <span class="badge badge-orange">8</span> in-progress
+                            <span class="pull-right fa fa-adjust"></span>
+                        </div>
+                        <div class="field">
+                            <span class="badge badge-red">4</span> pending
+                            <span class="pull-right fa fa-list-ul"></span>
+                        </div>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">
+                  <span class="image">
+                      <img src="../../static/img/avatars/avatar2.jpg" alt="" />
+                  </span>
+                  <span class="title">
+                    Jane Doe
+                  </span>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" style="width: 65%">
+                        <span class="sr-only">35% Complete (success)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-warning" style="width: 10%">
+                        <span class="sr-only">20% Complete (warning)</span>
+                      </div>
+                      <div class="progress-bar progress-bar-danger" style="width: 15%">
+                        <span class="sr-only">10% Complete (danger)</span>
+                      </div>
+                    </div>
+                    <span class="status">
+                        <div class="field">
+                            <span class="badge badge-green">10</span> completed
+                            <span class="pull-right fa fa-check"></span>
+                        </div>
+                        <div class="field">
+                            <span class="badge badge-orange">3</span> in-progress
+                            <span class="pull-right fa fa-adjust"></span>
+                        </div>
+                        <div class="field">
+                            <span class="badge badge-red">4</span> pending
+                            <span class="pull-right fa fa-list-ul"></span>
+                        </div>
+                    </span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </div> -->
+        <!-- /TEAM STATUS -->
+    </header>
+    <!--/HEADER -->
+
+    <!-- PAGE -->
+    <section id="page">
+                <!-- SIDEBAR -->
+                <div id="sidebar" class="sidebar">
+                    <div class="sidebar-menu nav-collapse">
+                        <div class="divide-20"></div>
+                        <!-- SEARCH BAR -->
+                        <div id="search-bar">
+                            <input class="search" type="text" placeholder="查找"><i class="fa fa-search search-icon"></i>
+                        </div>
+                        <!-- /SEARCH BAR -->
+
+                        <!-- SIDEBAR QUICK-LAUNCH -->
+                        <!-- <div id="quicklaunch">
+                        <!-- /SIDEBAR QUICK-LAUNCH -->
+
+                        <!-- SIDEBAR MENU -->
+                        <ul>
+                            <li class="active">
+                                <a href="index.html">
+                                <i class="fa fa-tachometer fa-fw"></i> <span class="menu-text">大数据决策分析</span>
+                                <span class="selected"></span>
+                                </a>
+                            </li>
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">项目统计分析</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="elements.html"><span class="sub-menu-text">项目经费统计</span></a></li>
+                                    <li><a class="" href="notifications.html"><span class="sub-menu-text">项目数量统计</span></a></li>
+                                    <li><a class="" href="notifications.html"><span class="sub-menu-text">项目区域统计</span></a></li>
+                                    <li><a class="" href="notifications.html"><span class="sub-menu-text">项目类别统计</span></a></li>
+                                    <li class="has-sub-sub">
+                                        <a href="javascript:;" class=""><span class="sub-menu-text">项目结题统计</span>
+                                        <span class="arrow"></span>
+                                        </a>
+                                        <ul class="sub-sub">
+                                            <li><a class="" href="#"><span class="sub-sub-menu-text">结题成功统计</span></a></li>
+                                            <li><a class="" href="#"><span class="sub-sub-menu-text">结题失败统计</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-table fa-fw"></i> <span class="menu-text">市县州主题分析</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="simple_table.html"><span class="sub-menu-text">各区域项目分布</span></a></li>
+                                    <li><a class="" href="dynamic_tables.html"><span class="sub-menu-text">各区域经费分布</span></a></li>
+                                    <li><a class="" href="jqgrid_plugin.html"><span class="sub-menu-text">各区域课题分布</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-pencil-square-o fa-fw"></i> <span class="menu-text">高校项目分布</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="forms.html"><span class="sub-menu-text">高校项目分布</span></a></li>
+                                    <li><a class="" href="wizards_validations.html"><span class="sub-menu-text">高校经费分布</span></a></li>
+                                    <li><a class="" href="wizards_validations.html"><span class="sub-menu-text">高校课题分布</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-bar-chart-o fa-fw"></i> <span class="menu-text">年报分析</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="flot_charts.html"><span class="sub-menu-text">年度结题情况</span></a></li>
+                                    <li><a class="" href="xcharts.html"><span class="sub-menu-text">年度经费情况</span></a></li>
+
+                                    <li><a class="" href="others.html"><span class="sub-menu-text">年度课题情况</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-columns fa-fw"></i> <span class="menu-text">专家人员统计分析</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="mini_sidebar.html"><span class="sub-menu-text">专家年龄统计</span></a></li>
+                                    <li><a class="" href="fixed_header.html"><span class="sub-menu-text">专家学术领域统计</span></a></li>
+                                    <li><a class="" href="fixed_header_sidebar.html"><span class="sub-menu-text">专家评审资格年限统计</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-map-marker fa-fw"></i>
+                                <span class="menu-text">评奖情况统计分析</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="google_maps.html"><span class="sub-menu-text">奖项类别</span></a></li>
+                                    <li><a class="" href="vector_maps.html"><span class="sub-menu-text">奖项记录</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-file-text fa-fw"></i> <span class="menu-text">机器学习算法库</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="login.html"><span class="sub-menu-text">朴素贝叶斯算法</span></a></li>
+                                    <li><a class="" href="user_profile.html"><span class="sub-menu-text">分类算法</span></a></li>
+
+                                    <li><a class="" href="chats.html"><span class="sub-menu-text">聚类算法</span></a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-file-text fa-fw"></i> <span class="menu-text">可视化图形库</span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="login.html"><span class="sub-menu-text">条形图</span></a></li>
+                                    <li><a class="" href="user_profile.html"><span class="sub-menu-text">折线图</span></a></li>
+                                    <li><a class="" href="chats.html"><span class="sub-menu-text">地图</span></a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-briefcase fa-fw"></i> <span class="menu-text">数据预处理<span class="badge pull-right">3</span></span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="search_results.html"><span class="sub-menu-text">网络爬虫</span></a>
+                                    </li>
+                                    <li><a class="" href="email_templates.html"><span class="sub-menu-text">数据清洗</span></a>
+                                    </li>
+                                    <li><a class="" href="error_404.html"><span class="sub-menu-text">数据拼装</span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has-sub">
+                                <a href="javascript:;" class="">
+                                <i class="fa fa-briefcase fa-fw"></i> <span class="menu-text">基础算法库<span class="badge pull-right">3</span></span>
+                                <span class="arrow"></span>
+                                </a>
+                                <ul class="sub">
+                                    <li><a class="" href="search_results.html"><span class="sub-menu-text">PDF转换</span></a>
+                                    </li>
+                                    <li><a class="" href="email_templates.html"><span class="sub-menu-text">发送邮件</span></a>
+                                    </li>
+                                    <li><a class="" href="error_404.html"><span class="sub-menu-text">信息查重</span></a></li>
+                                </ul>
+                            </li>
+
+
+                            <!-- 单独页面左右跳转参照此模板 -->
+                            <li><a class="" href="inbox.html"><i class="fa fa-envelope-o fa-fw"></i> <span class="menu-text">邮件</span></a></li>
+
+                            <li><a class="" href="widgets_box.html"><i class="fa fa-th-large fa-fw"></i>
+                            <span class="menu-text">系统设置
+                                    <span class="tooltip-error pull-right" title="" data-original-title="3 New Events">
+                                        <span class="label label-success">新</span>
+                                    </span>
+                            </span>
+                            </a></li>
+
+                            <!-- 单独页面跳转站外参照此模板 -->
+                            <li><a class="" href="../../static/frontend_theme/index.html" target="_blank"><i class="fa fa-desktop fa-fw"></i> <span class="menu-text">前端主题</span></a></li>
+
+                        </ul>
+                        <!-- /SIDEBAR MENU -->
+                    </div>
+                </div>
+                <!-- /SIDEBAR -->
+        <div id="main-content">
+            <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+            <!-- <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Box 设置</h4>
+                    </div>
+                    <div class="modal-body">
+                      这个是盒子设置
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+            <div class="container">
+                <div class="row">
+                    <div id="content" class="col-lg-12">
+                        <!-- PAGE HEADER-->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-header">
+                                    <!-- STYLER -->
+
+                                    <!-- /STYLER -->
+                                    <!-- BREADCRUMBS -->
+                                    <ul class="breadcrumb">
+                                        <li>
+                                            <i class="fa fa-home"></i>
+                                            <a href="index.html">首页</a>
+                                        </li>
+                                        <li>左侧主菜单</li>
+                                    </ul>
+                                    <!-- /BREADCRUMBS -->
+                                    <div class="clearfix">
+                                        <h3 class="content-title pull-left">页面的主题</h3>
+                                        <!-- DATE RANGE PICKER 右侧填充块-->
+                                        <!-- <span class="date-range pull-right">
+                                            <div class="btn-group">
+                                                <a class="js_update btn btn-default" href="#">Today</a>
+                                                <a class="js_update btn btn-default" href="#">Last 7 Days</a>
+                                                <a class="js_update btn btn-default hidden-xs" href="#">Last month</a>
+
+                                                <a id="reportrange" class="btn reportrange">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span></span>
+                                                    <i class="fa fa-angle-down"></i>
+                                                </a>
+                                            </div>
+                                        </span> -->
+                                        <!-- /DATE RANGE PICKER -->
+                                    </div>
+                                    <div class="description">对页面主题信息的详细描述</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <!-- 此处为主要内容 -->
+                        <!-- /PAGE HEADER -->
+                        <!-- DASHBOARD CONTENT -->
+                        <div class="row">
+                            <!-- COLUMN 1 -->
+                            <div class="col-md-6">
+                                <div class="row">
+                                  <div class="col-lg-6">
+                                     <div class="dashbox panel panel-default">
+                                        <div class="panel-body">
+                                           <div class="panel-left red">
+                                                <i class="fa fa-instagram fa-3x"></i>
+                                           </div>
+                                           <div class="panel-right">
+                                                <div class="number">6718</div>
+                                                <div class="title">Likes</div>
+                                                <span class="label label-success">
+                                                    26% <i class="fa fa-arrow-up"></i>
+                                                </span>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                  <div class="col-lg-6">
+                                     <div class="dashbox panel panel-default">
+                                        <div class="panel-body">
+                                           <div class="panel-left blue">
+                                                <i class="fa fa-twitter fa-3x"></i>
+                                           </div>
+                                           <div class="panel-right">
+                                                <div class="number">2724</div>
+                                                <div class="title">Followers</div>
+                                                <span class="label label-warning">
+                                                    5% <i class="fa fa-arrow-down"></i>
+                                                </span>
+                                           </div>
+                                        </div>
+                                     </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="quick-pie panel panel-default">
+                                            <div class="panel-body">
+                                                <div class="col-md-4 text-center">
+                                                    <div id="dash_pie_1" class="piechart" data-percent="59">
+                                                        <span class="percent"></span>
+                                                    </div>
+                                                    <a href="#" class="title">New Visitors <i class="fa fa-angle-right"></i></a>
+                                                </div>
+                                                <div class="col-md-4 text-center">
+                                                    <div id="dash_pie_2" class="piechart" data-percent="73">
+                                                        <span class="percent"></span>
+                                                    </div>
+                                                    <a href="#" class="title">Bounce Rate <i class="fa fa-angle-right"></i></a>
+                                                </div>
+                                                <div class="col-md-4 text-center">
+                                                    <div id="dash_pie_3" class="piechart" data-percent="90">
+                                                        <span class="percent"></span>
+                                                    </div>
+                                                    <a href="#" class="title">Brand Popularity <i class="fa fa-angle-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </div>
+                            </div>
+                            <!-- /COLUMN 1 -->
+
+                            <!-- COLUMN 2 -->
+                            <div class="col-md-6">
+                                <div class="box solid grey">
+                                    <div class="box-title">
+                                        <h4><i class="fa fa-dollar"></i>Revenue</h4>
+                                        <div class="tools">
+                                            <span class="label label-danger">
+                                                20% <i class="fa fa-arrow-up"></i>
+                                            </span>
+                                            <a href="#box-config" data-toggle="modal" class="config">
+                                                <i class="fa fa-cog"></i>
+                                            </a>
+                                            <a href="javascript:;" class="reload">
+                                                <i class="fa fa-refresh"></i>
+                                            </a>
+                                            <a href="javascript:;" class="collapse">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a href="javascript:;" class="remove">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div id="chart-revenue" style="height:240px"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /COLUMN 2 -->
+                        </div>
+                       <!-- /DASHBOARD CONTENT -->
+                       <!-- HERO GRAPH -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- BOX -->
+                                <div class="box border green">
+                                    <div class="box-title">
+                                        <h4><i class="fa fa-bars"></i> <span class="hidden-inline-mobile">Traffic & Sales</span></h4>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="tabbable header-tabs">
+                                            <ul class="nav nav-tabs">
+                                                 <li><a href="#box_tab2" data-toggle="tab"><i class="fa fa-search-plus"></i> <span class="hidden-inline-mobile">Select & Zoom Sales Chart</span></a></li>
+                                                 <li class="active"><a href="#box_tab1" data-toggle="tab"><i class="fa fa-bar-chart-o"></i> <span class="hidden-inline-mobile">Traffic Statistics</span></a></li>
+                                             </ul>
+                                             <div class="tab-content">
+                                                 <div class="tab-pane fade in active" id="box_tab1">
+                                                    <!-- TAB 1 -->
+                                                    <div id="chart-dash" class="chart"></div>
+                                                    <hr class="margin-bottom-0">
+                                                   <!-- /TAB 1 -->
+                                                 </div>
+                                                 <div class="tab-pane fade" id="box_tab2">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <div class="demo-container">
+                                                                <div id="placeholder" class="demo-placeholder"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="demo-container" style="height:100px;">
+                                                                <div id="overview" class="demo-placeholder"></div>
+                                                            </div>
+                                                            <div class="well well-bottom">
+                                                                <h4>Month over Month Analysis</h4>
+                                                                <ol>
+                                                                    <li>Selection support makes it easy to construct flexible zooming schemes.</li>
+                                                                    <li>With a few lines of code, the small overview plot to the right has been connected to the large plot.</li>
+                                                                    <li>Try selecting a rectangle on either of them.</li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /BOX -->
+                            </div>
+                        </div>
+                        <!-- 此处为主要内容 -->
+
+
+
+
+
+
+
+
+
+                        <!-- /CALENDAR & CHAT -->
+                        <div class="footer-tools">
+                            <span class="go-top">
+                                <i class="fa fa-chevron-up"></i> 顶部
+                            </span>
+                        </div>
+                    </div><!-- /CONTENT-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!--/PAGE -->
+    <!-- JAVASCRIPTS 设计-->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- JQUERY -->
+    <script src="../../static/js/jquery/jquery-2.0.3.min.js"></script>
+    <!-- JQUERY UI-->
+    <script src="../../static/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="../../static/bootstrap-dist/js/bootstrap.min.js"></script>
+
+
+    <!-- DATE RANGE PICKER -->
+    <script src="../../static/js/bootstrap-daterangepicker/moment.min.js"></script>
+
+    <script src="../../static/js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
+    <!-- SLIMSCROLL -->
+    <script type="text/javascript" src="../../static/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+    <!-- SLIMSCROLL -->
+    <script type="text/javascript" src="../../static/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script><script type="text/javascript" src="../../static/js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
+    <!-- BLOCK UI -->
+    <script type="text/javascript" src="../../static/js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
+    <!-- SPARKLINES -->
+    <script type="text/javascript" src="../../static/js/sparklines/jquery.sparkline.min.js"></script>
+    <!-- EASY PIE CHART -->
+    <script src="../../static/js/jquery-easing/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="../../static/js/easypiechart/jquery.easypiechart.min.js"></script>
+    <!-- FLOT CHARTS -->
+    <script src="../../static/js/flot/jquery.flot.min.js"></script>
+    <script src="../../static/js/flot/jquery.flot.time.min.js"></script>
+    <script src="../../static/js/flot/jquery.flot.selection.min.js"></script>
+    <script src="../../static/js/flot/jquery.flot.resize.min.js"></script>
+    <script src="../../static/js/flot/jquery.flot.pie.min.js"></script>
+    <script src="../../static/js/flot/jquery.flot.stack.min.js"></script>
+    <script src="../../static/js/flot/jquery.flot.crosshair.min.js"></script>
+    <!-- TODO -->
+    <script type="text/javascript" src="../../static/js/jquery-todo/js/paddystodolist.js"></script>
+    <!-- TIMEAGO -->
+    <script type="text/javascript" src="../../static/js/timeago/jquery.timeago.min.js"></script>
+    <!-- FULL CALENDAR -->
+    <script type="text/javascript" src="../../static/js/fullcalendar/fullcalendar.min.js"></script>
+    <!-- COOKIE -->
+    <script type="text/javascript" src="../../static/js/jQuery-Cookie/jquery.cookie.min.js"></script>
+    <!-- GRITTER -->
+    <script type="text/javascript" src="../../static/js/gritter/js/jquery.gritter.min.js"></script>
+    <!-- CUSTOM SCRIPT -->
+    <script src="../../static/js/script.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            App.setPage("index");  //Set current page
+            App.init(); //Initialise plugins and elements
+        });
+    </script>
+    <!-- /JAVASCRIPTS -->
+</body>
+</html>
