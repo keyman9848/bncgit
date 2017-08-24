@@ -88,7 +88,31 @@ DATABASES = {
         'PASSWORD': 'test123',
         'HOST':'localhost',
         'PORT':'3306',
-    }
+    },
+    'db1': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kjt',
+        'USER': 'kjt',
+        'PASSWORD': 'kjt$',
+        "HOST": "localhost",
+        'PORT':'3306',
+    },
+    'db2': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kjt',
+        'USER': 'kjt',
+        'PASSWORD': 'kjt$',
+        "HOST": "172.16.143.66",
+        'PORT':'3306',
+    },
+}
+
+# use multi-database in django
+DATABASE_ROUTERS = ['xmjc_analysis.database_router.DatabaseAppsRouter']
+DATABASE_APPS_MAPPING = {
+    #'app_name':'database_name',
+    'app1': 'db1',
+    'app2': 'db2',
 }
 
 # Password validation

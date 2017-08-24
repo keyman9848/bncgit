@@ -9,6 +9,154 @@
 
 <!-- 覆盖内容块，自定义页面的内容 -->
 {% block content %}
-<p>覆盖内容块，这里是项目经费</p>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div class="row">
+    <div class="col-md-6 " id="test1" style="height:400px;margin:0 auto">
+    </div>
+    <div class="col-md-6 " id="test2" style="height:400px;margin:0 auto">
+    </div>
+</div>
+{{ data1|safe }}
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts图表
+    var data1 = eval({{ data1|safe }});
+    keys = [];
+    values = [];
+     for (var key in data1){
+        keys.push(data1[key].keys);
+        values.push(data1[key].values)
+     }
+    // alert(values);
+
+
+    var myChart = echarts.init(document.getElementById('test1'));
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: keys
+        },
+        yAxis: {
+        },
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: values
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts图表
+    // var data=eval({{ data|safe }})
+    // alert(typeof(data))
+    var myChart1 = echarts.init(document.getElementById('test2'));
+    // 指定图表的配置项和数据
+    var colorList = [ '#59c5a7', '#51b8fe', '#fa827d' ];
+    // 总和
+    var total = {
+         name: '总单数',
+         value: '145'
+     }
+
+    // var originalData = [{
+    //      value: 55,
+    //      name: '优先55'
+    //  }, {
+    //      value: 70,
+    //      name: '普通70'
+    //  }, {
+    //      value: 25,
+    //      name: "紧急25"
+    //  }];
+    // 后台数据绑定
+    var originalData=eval({{ data|safe }});
+    // alert(originalData.name)
+     echarts.util.each(originalData, function(item, index) {
+         item.itemStyle = {
+             normal: {
+                 color: colorList[index]
+             }
+         };
+     });
+
+     option = {
+         title: [{
+                text: total.name,
+                // link: total.name,
+                // target:'blank',
+                left: '49%',
+                top: '40%',
+                textAlign: 'center',
+                textBaseline: 'middle',
+                textStyle: {
+                    color: '#999',
+                    fontWeight: 'normal',
+                    fontSize: 20
+                }
+            }, {
+                text: total.value,
+                left: '49%',
+                top: '51%',
+                textAlign: 'center',
+                textBaseline: 'middle',
+                textStyle: {
+                    color: '#666',
+                    fontWeight: 'normal',
+                    fontSize: 40
+                }
+            }],
+         series: [{
+             hoverAnimation: false, //设置饼图默认的展开样式
+             radius: [100, 190],
+             name: 'pie',
+             type: 'pie',
+             selectedMode: 'single',
+             selectedOffset: 16, //选中是扇区偏移量
+             clockwise: true,
+             startAngle: 90,
+             label: {
+                 normal: {
+                     textStyle: {
+                         fontSize: 18,
+                         color: '#999'
+                     }
+                 }
+             },
+             labelLine: {
+                 normal: {
+                     lineStyle: {
+                         color: '#999',
+
+                     }
+                 }
+             },
+             data: originalData
+         }]
+     };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option, true);
+</script>
+
+
+
+<!-- {{data|safe}} -->
+<!-- <script src="/static/js/xmjs/test1.js"></script> -->
+<!-- <script>
+    jQuery(document).ready(function() {
+        App.setPage("dynamic_table");  //Set current page
+        App.init(); //Initialise plugins and elements
+    });
+</script> -->
 
 {% endblock %}

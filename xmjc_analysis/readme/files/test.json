@@ -1,0 +1,38 @@
+[
+    {"model": "analysis.user", "pk": 1,
+     "fields": {"username": "\u767d\u5170\u82b1", "userpass": "admin", "useremail": "admin@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458"}
+    },
+    {"model": "analysis.user", "pk": 2, "fields": {"username": "\u5f20\u4e00", "userpass": "admin", "useremail": "zhang1@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 3, "fields": {"username": "\u5f20\u4e8c", "userpass": "admin", "useremail": "zhang2@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 4, "fields": {"username": "\u5f20\u4e09", "userpass": "admin", "useremail": "zhang3@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 5, "fields": {"username": "\u5f20\u56db", "userpass": "admin", "useremail": "zhang4@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 6, "fields": {"username": "\u5f20\u4e94 ", "userpass": "admin", "useremail": "zhang5@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 7, "fields": {"username": "\u5f20\u516d ", "userpass": "admin", "useremail": "zhang6@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 8, "fields": {"username": "\u5f20\u4e03", "userpass": "admin", "useremail": "zhang7@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 9, "fields": {"username": "\u5f20\u516b", "userpass": "admin", "useremail": "zhang8@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458\n"}},
+    {"model": "analysis.user", "pk": 10, "fields": {"username": "\u5f20\u4e5d", "userpass": "admin", "useremail": "zhang9@qq.com", "usertype": "\u8d85\u7ea7\u7ba1\u7406\u5458"}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

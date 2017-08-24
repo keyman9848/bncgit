@@ -1,265 +1,234 @@
+<!DOCTYPE html>
 <html>
 <head>
 {% load static %}
-    <title>{% block title %}四川省科技厅大数据决策分析平台{% endblock %}</title>
+    <!-- meta的引用 -->
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="bnc">
     <!-- CSS样式设计 -->
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap-dist/css/bootstrap.css"  />
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap-dist/css/bootstrap.min.css"  />
     <link rel="stylesheet" type="text/css" href="/static/bootstrap-dist/css/bootstrap-theme.css"  />
     <!-- 换肤 -->
     <link rel="stylesheet" type="text/css" href="/static/css/cloud-admin.css" />
     <link rel="stylesheet" type="text/css"  href="/static/css/themes/default.css" id="skin-switcher" />
-
-    <link rel="stylesheet" type="text/css"  href="/static/css/responsive.css"  />
-    <!-- STYLESHEETS --><!--[if lt IE 9]><script src="../../static/js/flot/excanvas.min.js"></script><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <!--图标  -->
     <link href="/static/font-awesome/css/font-awesome.min.css"  rel="stylesheet"/>
-    <!-- ANIMATE -->
-    <link rel="stylesheet" type="text/css" href="/static/css/animatecss/animate.min.css"  />
-    <!-- DATE RANGE PICKER -->
-    <link rel="stylesheet" type="text/css" href="/static/js/bootstrap-daterangepicker/daterangepicker-bs3.css"  />
+    <!-- JQUERY UI-->
+    <link rel="stylesheet" type="text/css" href="/static/js/jquery-ui-1.10.3.custom/css/custom-theme/jquery-ui-1.10.3.custom.min.css" />
 
+    <!-- 表格 -->
+    <link rel="stylesheet" type="text/css" href="/static/js/datatables/media/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/js/datatables/media/assets/css/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/js/datatables/extras/TableTools/media/css/TableTools.min.css" />
 
-    <!-- TODO -->
-    <link rel="stylesheet" type="text/css" href="/static/js/jquery-todo/css/styles.css" />
-    <!-- FULL CALENDAR -->
-    <link rel="stylesheet" type="text/css" href="/static/js/fullcalendar/fullcalendar.min.css" />
-    <!-- GRITTER -->
-    <link rel="stylesheet" type="text/css" href="/static/js/gritter/css/jquery.gritter.css" />
-    <!-- FONTS -->
-    <!-- <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'> -->
+    <!-- JQUERY，所有bootstrap依赖此js -->
+    <script src="/static/js/jquery-2.0.3.min.js"></script>
+    <!-- echarts -->
+    <script src="/static/js/echarts/echarts.js"></script>
+    <!-- title标签，可以自定义设置 -->
+    <title>{% block title %}四川省科技厅大数据决策分析平台{% endblock %}</title>
 </head>
-<body>
-    <!-- HEADER -->
+
+<body >
+    <!-- 顶部设计 -->
     <header class="navbar clearfix" id="header">
         <div class="container">
-                <div class="navbar-brand">
-                    <!-- COMPANY LOGO -->
-                    <a href="index.html">
-                        <img src="/static/img/logo/logo.png" alt="大数据决策分析" class="img-responsive" height="30" width="120">
-                    </a>
-                    <!-- /COMPANY LOGO -->
-                    <!-- TEAM STATUS FOR MOBILE -->
-                    <div class="visible-xs">
-                        <a href="#" class="team-status-toggle switcher btn dropdown-toggle">
-                            <i class="fa fa-users"></i>
-                        </a>
-                    </div>
-                    <!-- /TEAM STATUS FOR MOBILE -->
-                    <!-- SIDEBAR COLLAPSE -->
-                    <div id="sidebar-collapse" class="sidebar-collapse btn">
-                        <i class="fa fa-bars"
-                            data-icon1="fa fa-bars"
-                            data-icon2="fa fa-bars" ></i>
-                    </div>
-                    <!-- /SIDEBAR COLLAPSE -->
+            <div class="navbar-brand ">
+                <!-- 公司logo -->
+                <a href="{% url 'index' %}">
+                    <img src="/static/img/logo/logo.png" alt="" class="img-responsive" height="30" width="120">
+                </a>
+                <!-- /公司logo -->
+                <!-- 折叠侧边栏 -->
+                <div id="sidebar-collapse" class="sidebar-collapse btn">
+                    <i class="fa fa-bars"
+                        data-icon1="fa fa-bars"
+                        data-icon2="fa fa-bars" ></i>
                 </div>
-                <!-- NAVBAR LEFT -->
-            <!--     <ul class="nav navbar-nav pull-left hidden-xs" id="navbar-left">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-cog"></i>
-                            <span class="name">皮肤</span>
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu skins">
-                            <li class="dropdown-title">
-                                <span><i class="fa fa-leaf"></i> 皮肤主题 </span>
-                            </li>
-                            <li><a href="#" data-skin="默认">天蓝 (默认)</a></li>
-                            <li><a href="#" data-skin="night">深蓝</a></li>
-                            <li><a href="#" data-skin="earth">棕色</a></li>
-                            <li><a href="#" data-skin="utopia">乌托邦</a></li>
-                            <li><a href="#" data-skin="nature">自然绿</a></li>
-                            <li><a href="#" data-skin="graphite">石墨黑</a></li>
-                         </ul>
-                    </li>
-                </ul> -->
-                <!-- /NAVBAR LEFT -->
-                <!-- BEGIN TOP NAVIGATION MENU -->
-                <ul class="nav navbar-nav pull-right">
-                    <!-- BEGIN NOTIFICATION DROPDOWN -->
-                    <li class="dropdown" id="header-notification">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell"></i>
-                            <span class="badge">7</span>
-                        </a>
-                        <ul class="dropdown-menu notification">
-                            <li class="dropdown-title">
-                                <span><i class="fa fa-bell"></i> 5 消息通知</span>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-success"><i class="fa fa-user"></i></span>
-                                    <span class="body">
-                                        <span class="message">5 用户在线. </span>
-                                        <span class="time">
-                                            <i class="fa fa-clock-o"></i>
-                                            <span>刚刚</span>
-                                        </span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-warning"><i class="fa fa-lock"></i></span>
-                                    <span class="body">
-                                        <span class="message">DW1 服务器停止.</span>
-                                        <span class="time">
-                                            <i class="fa fa-clock-o"></i>
-                                            <span>32 分钟前</span>
-                                        </span>
-                                    </span>
-                                </a>
-                            </li>
+                <!-- /折叠侧边栏 -->
+            </div>
 
-                            <li class="footer">
-                                <a href="#">查看所有通知信息 <i class="fa fa-arrow-circle-right"></i></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- END NOTIFICATION DROPDOWN -->
-                    <!-- BEGIN TODO DROPDOWN -->
-                    <li class="dropdown user" id="header-user">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img alt="" src="/static/img/avatars/avatar3.jpg" />
-                            <span class="username">王定国</span>
-                            <i class="fa fa-angle-down"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-user"></i>个人简介</a></li>
-                            <li><a href="#"><i class="fa fa-cog"></i> 账号设置</a></li>
-                            <li><a href="login.html"><i class="fa fa-power-off"></i>退 出</a></li>
-                        </ul>
-                    </li>
-                    <!-- END USER LOGIN DROPDOWN -->
-                </ul>
-                <!-- END TOP NAVIGATION MENU -->
+            <!-- NAVBAR LEFT -->
+            <ul class="nav navbar-nav pull-left hidden-xs" id="navbar-left">
+                <li class="dropdown">
+                    <a href="{% url 'index' %}" class="team-status-toggle dropdown-toggle tip-bottom" data-toggle="tooltip" title="大数据决策分析平台">
+                        <span class="name" style="font-size: x-large;">大数据决策分析平台</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- /NAVBAR LEFT -->
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <ul class="nav navbar-nav pull-right" style="float: right;margin-right: -6%">
+                <!-- 通知 -->
+                <li class="dropdown" id="header-notification">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-bell"></i>
+                        <span class="badge">7</span>
+                    </a>
+                    <ul class="dropdown-menu notification">
+                        <li class="dropdown-title">
+                            <span><i class="fa fa-bell"></i> 6 消息通知</span>
+                        </li>
+                        <!-- 通知下拉用户信息 -->
+                        <li>
+                            <a href="#">
+                                <span class="label label-success"><i class="fa fa-user"></i></span>
+                                <span class="body">
+                                    <span class="message">5 用户在线. </span>
+                                    <span class="time">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>刚刚</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /通知下拉用户信息 -->
+                        <!-- 服务器信息 -->
+                        <li>
+                            <a href="#">
+                                <span class="label label-warning"><i class="fa fa-lock"></i></span>
+                                <span class="body">
+                                    <span class="message">DW1 服务器停止.</span>
+                                    <span class="time">
+                                        <i class="fa fa-clock-o"></i>
+                                        <span>32 分钟前</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <!-- /服务器信息 -->
+                        <!-- 查看所有通知信息 -->
+                        <li class="footer">
+                            <a href="#">查看所有通知信息 <i class="fa fa-arrow-circle-right"></i></a>
+                        </li>
+                         <!-- /查看所有通知信息 -->
+                    </ul>
+                </li>
+                <!-- /通知 -->
+                <!-- 登录信息 -->
+                <li class="dropdown user" id="header-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img alt="" src="/static/img/avatars/avatar3.jpg" />
+                        <span class="username">王定国</span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><i class="fa fa-user"></i>个人简介</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> 账号设置</a></li>
+                        <li><a href="login.html"><i class="fa fa-power-off"></i>退 出</a></li>
+                    </ul>
+                </li>
+                <!-- /登录信息 -->
+            </ul>
+            <!-- END TOP NAVIGATION MENU -->
         </div>
     </header>
-    <!--/HEADER -->
-    <div class="copyrights">Collect from <a href="http://www.mycodes.net/" >源码之家</a></div>
-    <!-- PAGE -->
+    <!--/顶部设计 -->
+
+    <!-- 主页面设计 -->
     <section id="page">
-                <!-- SIDEBAR -->
-                <div id="sidebar" class="sidebar">
-                    {% include 'xmjc/nav.html' %}
-                </div>
-                <!-- /SIDEBAR -->
+        <!-- 侧边栏 -->
+        <div id="sidebar" class="sidebar">
+        {% include 'xmjc/nav.html' %}
+        </div>
+        <!-- /侧边栏 -->
+        <!-- 右侧 -->
         <div id="main-content">
             <div class="container">
                 <div class="row">
+                    <!-- 右侧内容 -->
                     <div id="content" class="col-lg-12">
-                        <!-- PAGE HEADER-->
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="page-header">
-                                    <!-- STYLER -->
+                        <div class="row col-lg-12">
+                            <div class="page-header">
+                                <!-- 面包式导航页-->
+                                <ul class="breadcrumb">
+                                    <li>
+                                        <i class="fa fa-home"></i>
+                                        <a href="{% url 'index' %}">首页  </a>
+                                    </li>
 
-                                    <!-- /STYLER -->
-                                    <!-- BREADCRUMBS -->
-                                    <ul class="breadcrumb">
-                                        <li>
-                                            <i class="fa fa-home"></i>
-                                            <a href="{% url 'index' %}">首页  </a>
-                                        </li>
-                                        <li>
-                                        <!-- 左侧主菜单 -->
-                                        {% block lnav %}
-                                        菜单导航
-                                        {% endblock %}
-
-                                        </li>
-                                    </ul>
-                                    <!-- /BREADCRUMBS -->
-                                    <div class="clearfix">
-                                        <h3 class="content-title pull-left">
-                                        {{ lnav }}
-                                        </h3>
-                                    </div>
-                                    <div class="description">
-                                    {{ lcontent }}
-                                    </div>
+                                    <li>
+                                    <!-- 子主菜单 -->
+                                    {% block lnav %}
+                                    菜单导航
+                                    {% endblock %}
+                                    </li>
+                                </ul>
+                                <!-- /面包式导航页 -->
+                                <!-- 当前主题 -->
+                                <div class="clearfix">
+                                    <h3 class="content-title pull-left">
+                                    {{ lnav }}
+                                    </h3>
                                 </div>
+                                <!-- /当前主题 -->
+                                <!-- 当前主题描述 -->
+                                <div class="description">
+                                {{ lcontent }}
+                                </div>
+                                <!-- /当前主题描述 -->
                             </div>
                         </div>
-                        <!-- /PAGE HEADER -->
-                        {% block content %}
-
-
-                        <p>此处为主要内容</p>
-
-                        {% endblock %}
-
-                        <!-- /CALENDAR & CHAT -->
+                        <!-- 页面内容设计 -->
+                        <div class="row col-lg-12">
+                            {% block content %}
+                            <p>此处为主要内容</p>
+                            {% endblock %}
+                        </div>
+                        <!-- /页面内容设计 -->
+                        <!-- 顶部 -->
                         <div class="footer-tools">
                             <span class="go-top">
                                 <i class="fa fa-chevron-up"></i> 顶部
                             </span>
                         </div>
-                    </div><!-- /CONTENT-->
+                        <!-- /顶部 -->
+                    </div>
+                    <!-- 右侧内容 -->
                 </div>
             </div>
         </div>
+        <!-- 右侧 -->
     </section>
+    <!--/主页面设计 -->
 
-        <!--/PAGE -->
     <!-- JAVASCRIPTS -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- JQUERY -->
-     <script src="/static/js/jquery/jquery-2.0.3.min.js"></script>
+    <!-- JQUERY UI，折叠-->
     <!-- JQUERY UI-->
     <script src="/static/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
     <!-- BOOTSTRAP -->
     <script src="/static/bootstrap-dist/js/bootstrap.min.js"></script>
-
-
     <!-- DATE RANGE PICKER -->
     <script src="/static/js/bootstrap-daterangepicker/moment.min.js"></script>
-
     <script src="/static/js/bootstrap-daterangepicker/daterangepicker.min.js"></script>
-    <!-- SLIMSCROLL -->
-    <script type="text/javascript" src="/static/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
-    <!-- SLIMSCROLL -->
-    <script type="text/javascript" src="/static/js/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script><script type="text/javascript" src="/static/js/jQuery-slimScroll-1.3.0/slimScrollHorizontal.min.js"></script>
-    <!-- BLOCK UI -->
+    <!-- BLOCK UI 刷新-->
     <script type="text/javascript" src="/static/js/jQuery-BlockUI/jquery.blockUI.min.js"></script>
-    <!-- SPARKLINES -->
-    <script type="text/javascript" src="/static/js/sparklines/jquery.sparkline.min.js"></script>
-    <!-- EASY PIE CHART -->
-    <script src="/static/js/jquery-easing/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="/static/js/easypiechart/jquery.easypiechart.min.js"></script>
+    <!-- 表格 -->
+    <script type="text/javascript" src="/static/js/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/static/js/datatables/media/assets/js/datatables.min.js"></script>
+    <script type="text/javascript" src="/static/js/datatables/extras/TableTools/media/js/TableTools.min.js"></script>
+    <script type="text/javascript" src="/static/js/datatables/extras/TableTools/media/js/ZeroClipboard.min.js"></script>
 
     <!-- FLOT CHARTS -->
-    <script src="/static/js/flot/jquery.flot.min.js"></script>
+   <!--  <script src="/static/js/flot/jquery.flot.min.js"></script>
     <script src="/static/js/flot/jquery.flot.time.min.js"></script>
     <script src="/static/js/flot/jquery.flot.selection.min.js"></script>
     <script src="/static/js/flot/jquery.flot.resize.min.js"></script>
     <script src="/static/js/flot/jquery.flot.pie.min.js"></script>
     <script src="/static/js/flot/jquery.flot.stack.min.js"></script>
-    <script src="/static/js/flot/jquery.flot.crosshair.min.js"></script>
-    <!-- TODO -->
-    <script type="text/javascript" src="/static/js/jquery-todo/js/paddystodolist.js"></script>
-    <!-- TIMEAGO -->
-    <script type="text/javascript" src="/static/js/timeago/jquery.timeago.min.js"></script>
-    <!-- FULL CALENDAR -->
-    <script type="text/javascript" src="/static/js/fullcalendar/fullcalendar.min.js"></script>
+    <script src="/static/js/flot/jquery.flot.crosshair.min.js"></script> -->
     <!-- COOKIE -->
-    <script type="text/javascript" src="/static/js/jQuery-Cookie/jquery.cookie.min.js"></script>
-    <!-- GRITTER -->
-    <script type="text/javascript" src="/static/js/gritter/js/jquery.gritter.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.min.js"></script>
     <!-- CUSTOM SCRIPT -->
     <script src="/static/js/script.js"></script>
-
-    <script>
+   <!--  <script>
         jQuery(document).ready(function() {
             App.setPage("base");  //Set current page
             App.init(); //Initialise plugins and elements
         });
-    </script>
+    </script> -->
     <!-- /JAVASCRIPTS -->
 </body>
 </html>

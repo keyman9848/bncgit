@@ -7,6 +7,12 @@
 <!-- 覆盖内容块，自定义页面的内容 -->
 {% block content %}
 <!-- <p>覆盖内容块，自定义页面的内容</p> -->
-{% include 'xmjc/contentdome.html' %}
+{% include 'xmjc/content.html' %}
 
+<script>
+    jQuery(document).ready(function() {
+        App.setPage("base");  //Set current page
+        App.init(); //Initialise plugins and elements
+    });
+</script>
 {% endblock %}
